@@ -33,3 +33,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51f4174 (Add GitHub Pages deployment workflow)
