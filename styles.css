@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to bottom, #fff 70%, #333 30%);
+    color: #fff;
+    height: 200px;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+header .logo img {
+    width: 120px;
+    margin-top: 20px;
+    height: auto;
+}
+
+header h2 {
+    font-size: 2em;
+    font-family: Cambria, serif;
+    color: #333; 
+    margin: 0px;
+}
+
+.header-nav {
+    margin: 20px 5% 0;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    margin-top: 45px;
+    padding: 0;
+}
+
+.header-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.header-nav ul li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-nav ul li a::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #ffffff;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.header-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    height: 100vh; /* セクション全体の高さをウィンドウの高さに合わせる */
+    overflow: hidden; /* オーバーフローを隠す */
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow-container {
+    position: absolute; /* スライドショーを絶対位置に設定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* スライドショーのz-indexを0に設定 */
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+    height: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.maincall {
+    position: absolute; /* 位置を絶対位置に設定 */
+    top: 50%; /* 上下中央に配置 */
+    left: 50%; /* 左右中央に配置 */
+    transform: translate(-50%, -50%); /* 中央配置を調整 */
+    z-index: 1; /* テキストのz-indexを1に設定 */
+    width: 80%; /* 幅を80%に設定 */
+    font-family: Georgia, serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.maincall h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem); /* ウィンドウ幅に応じて変更 */
+    margin: 0.67em 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.maincall p {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* ウィンドウ幅に応じて変更 */
+    margin: 0; /* 余分な余白を削除 */
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@media (max-width: 1200px) {
+    .maincall h1 {
+        font-size: 2.5em;
+    }
+    .maincall p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 992px) {
+    .maincall h1 {
+        font-size: 2em;
+    }
+    .maincall p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .maincall h1 {
+        font-size: 1.5em;
+    }
+    .maincall p {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 576px) {
+    .maincall h1 {
+        font-size: 1.2em;
+    }
+    .maincall p {
+        font-size: 0.6em;
+    }
+}
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.three-column-section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.column {
+    flex: 1;
+    margin: 0 15px;
+    text-align: center;
+}
+
+.column h3 {
+    background-color: #cfcfcf;  
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.column p {
+    font-size: 16px;
+    text-align: left;
+}
+
+.item {
+    overflow: hidden;
+}
+
+.item img {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+.item img.hover {
+    transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .item img {
+        transition: none;
+    }
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Gallery specific styles */
+.wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.gallery {
+    margin: 0 0 5px 0;
+}
+
+.gallery img, .choice-btn img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.gallery-title {
+    text-align: center;
+    font-family: Cambria, serif;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+.slick-prev, 
+.slick-next {
+    position: absolute;
+    z-index: 3;
+    top: 42%;
+    cursor: pointer;
+    outline: none;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev {
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+
+.choice-btn li {
+    cursor: pointer;
+    outline: none;
+    background: #4a4a4a;
+    width: 12.5% !important;
+}
+
+.choice-btn li img {
+    opacity: 0.4;
+}
+
+.choice-btn li.slick-current img {
+    opacity: 1;
+}
+
+.choice-btn .slick-track {
+    transform: unset !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+  
+a:hover,
+a:active {
+    color: #5a6b65;
+}
+  
+p {
+    margin: 30px 0;
+    font-family: Arial, sans-serif;
+    word-wrap: break-word;
+}
+
+.caption {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery .slick-slide:hover .caption {
+    opacity: 1;
+}

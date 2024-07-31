@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Alps of Japan</title>
+<meta name="description"  content="Enhanced image gallery with thumbnails, lightbox, and responsive design">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Alps of Japanページ特有のスタイル */
+.wrapper {
+    max-width: 1250px; /* 幅の制限を緩和 */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery div {
+    flex: 1 1 50%;
+    margin: 0px;
+}
+
+.choice-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.choice-btn li {
+    margin: 0 0px;
+    width: 100%;
+    max-width: 1250px;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="yama.png" alt="Logo"></a>
+        </div>
+        <h2>Gallery Alps of Japan</h2>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="gallery">
+        <div>
+          <a href="DSC_4253.jpg" data-fancybox="gallery" data-caption="Mt. Yarigatake">
+            <img src="DSC_4253.jpg" alt="" data-lazy="DSC_4253.jpg">
+            <p class="caption">Mt. Yarigatake</p>
+          </a>
+        </div>
+        <div>
+          <a href="DSC_1677-EDIT.jpg" data-fancybox="gallery" data-caption="Mt. Shirouma">
+            <img src="DSC_1677-EDIT.jpg" alt="" data-lazy="DSC_1677-EDIT.jpg">
+            <p class="caption">Mt. Shirouma</p>
+          </a>
+        </div>
+        <div>
+          <a href="DSC_4868-EDIT.jpg" data-fancybox="gallery" data-caption="Mt. Thubakuro">
+            <img src="DSC_4868-EDIT.jpg" alt="" data-lazy="DSC_4868-EDIT.jpg">
+            <p class="caption">Mt. Thubakuro</p>
+          </a>
+        </div>
+        <div>
+          <a href="DSC_5019-EDIT.jpg" data-fancybox="gallery" data-caption="Mt. Norikura">
+            <img src="DSC_5019-EDIT.jpg" alt="" data-lazy="DSC_5019-EDIT.jpg">
+            <p class="caption">Mt. Norikura</p>
+          </a>
+        </div>
+        <div>
+          <a href="DSC_6140-EDIT.jpg" data-fancybox="gallery" data-caption="Yathugatake">
+            <img src="DSC_6140-EDIT.jpg" alt="" data-lazy="DSC_6140-EDIT.jpg">
+            <p class="caption">Yathugatake</p>
+          </a>
+        </div>
+        <div>
+          <a href="DSC_7047-EDIT.jpg" data-fancybox="gallery" data-caption="Mt. Ontake">
+            <img src="DSC_7047-EDIT.jpg" alt="" data-lazy="DSC_7047-EDIT.jpg">
+            <p class="caption">Mt. Ontake</p>
+          </a>
+        </div>
+        <div>
+          <a href="IMG_20210411_110524.jpg" data-fancybox="gallery" data-caption="Mt. Kisokomagatake">
+            <img src="IMG_20210411_110524.jpg" alt="" data-lazy="IMG_20210411_110524.jpg">
+            <p class="caption">Mt. Kisokomagatake</p>
+          </a>
+        </div>
+        <div>
+          <a href="line_77901063423406.jpg" data-fancybox="gallery" data-caption="Mt. Yakedake">
+            <img src="line_77901063423406.jpg" alt="" data-lazy="line_77901063423406.jpg">
+            <p class="caption">Mt. Yakedake</p>
+          </a>
+        </div>
+      </div>
+      
+      <ul class="choice-btn">
+        <li><img src="DSC_4253.jpg" alt=""></li>
+        <li><img src="DSC_1677-EDIT.jpg" alt=""></li>
+        <li><img src="DSC_4868-EDIT.jpg" alt=""></li>
+        <li><img src="DSC_5019-EDIT.jpg" alt=""></li>
+        <li><img src="DSC_6140-EDIT.jpg" alt=""></li>
+        <li><img src="DSC_7047-EDIT.jpg" alt=""></li>
+        <li><img src="IMG_20210411_110524.jpg" alt=""></li>
+        <li><img src="line_77901063423406.jpg" alt=""></li>
+      </ul>
+    </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </footer>
+  <!-- script.jsの読み込み -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script>
+$(function() {
+  $('.gallery').slick({
+    infinite: true,
+    fade: true,
+    arrows: true,
+    prevArrow: '<div class="slick-prev"></div>',
+    nextArrow: '<div class="slick-next"></div>',
+    asNavFor: '.choice-btn',
+    adaptiveHeight: true,
+    lazyLoad: 'ondemand',
+  });
+
+  $('.choice-btn').slick({
+    infinite: true,
+    slidesToShow: 8,
+    focusOnSelect: true,
+    asNavFor: '.gallery',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 6
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4
+        }
+      }
+    ]
+  });
+
+  $('.gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    var index = nextSlide;
+    $(".choice-btn .slick-slide").removeClass("slick-current").eq(index).addClass("slick-current");
+  });
+
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
+});
+</script>
+</body>
+</html>
